@@ -7,6 +7,9 @@ function Home() {
   const [search, setSearch] = useState('')
 
   const handleSearch = (search) => {
+
+    if (search === '') return
+    
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://api.github.com/users/${search}`)

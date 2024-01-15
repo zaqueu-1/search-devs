@@ -22,10 +22,10 @@ function UserRepos({repos}) {
 
   return (
     <div className='user-repos'>
-        {slicedRepos?.map((repo, index) => (
+        {slicedRepos?.map((repo) => (
             <div className='repo-container'>
                 <a href={repo?.html_url} target='_blank' rel="noreferrer">
-                    <h3 key={index}>{repo?.name}</h3>
+                    <h3 key={repo.id}>{repo?.name}</h3>
                 </a>
                 <p>{repo?.description ? repo.description : 'O usuário não adicionou uma descrição ao repositório.'}</p>
                 <div className='repo-stats'>

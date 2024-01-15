@@ -34,15 +34,17 @@ function User() {
   }, [username])
 
   return (
-    <div className='user-container'>
+    <>
       <Navbar />
-      <div style={{display:'flex',flexDirection:'column'}}>
-        <UserInfo user={user.userData}/>
-        <button className='contact-btn' onClick={() => window.location.href = user.userData.blog}>Contato</button>
-      </div>
+      <div className='user-container'>
+        <div style={{display:'flex',flexDirection:'column'}}>
+          <UserInfo user={user.userData}/>
+          <button className='contact-btn' onClick={() => window.location.href = user.userData.blog}>Contato</button>
+        </div>
 
-      <UserRepos repos={user.reposData}/>
-    </div>
+        <UserRepos repos={user.reposData}/>
+      </div>
+    </>
   )
 }
 
