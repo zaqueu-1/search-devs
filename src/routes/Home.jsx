@@ -1,28 +1,29 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Home.css'
 import axios from 'axios'
 
 function Home() {
 
   const [search, setSearch] = useState('')
+  const navigate = useNavigate()
 
   const handleSearch = (search) => {
 
     if (search === '') return
-    
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`https://api.github.com/users/${search}`)
         const user = response.data
-        user ? window.location.href = `/users/${search}` : null
+        user ? navigate(`/users/${search}`) : null
       } catch (error) {
-        window.location.href = `/not_found`
+        navigate(`/not_found`)
       }
     }
 
     fetchData()
   }
-
 
   return (
     <div className='home-container'>

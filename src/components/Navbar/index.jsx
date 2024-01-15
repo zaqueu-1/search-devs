@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Navbar.css'
 
 function Navbar() {
 
     const [searchTerm, setSearchTerm] = useState('')
+    const navigate = useNavigate()
 
     const handleEnter = (e, searchTerm) => { 
         if (e.key === 'Enter') {
@@ -15,9 +17,9 @@ function Navbar() {
                 try {
                     const response = await axios.get(`https://api.github.com/users/${searchTerm}`)
                     const user = response.data
-                    user ? window.location.href = `/users/${searchTerm}` : null
+                    user ? navigate(`/users/${searchTerm}`) : null
                 } catch (error) {
-                    window.location.href = `/not_found`
+                    navigate(`/not_found`)
                 }
             }
             fetchData()
@@ -26,10 +28,12 @@ function Navbar() {
 
   return (
     <div className='navbar-container'>
-        <p>
-            <span style={{color:'#0069CA'}}>Search</span>
-            <span style={{color:'#8C19D2'}}> d_evs</span>
-        </p>
+        <a href='/' className='navbar-logo'>
+            <p>
+                <span style={{color:'#0069CA'}}>Search</span>
+                <span style={{color:'#8C19D2'}}> d_evs</span>
+            </p>
+        </a>
         <div className='nav-input-box'>
             <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} onKeyDown={(e) => handleEnter(e, searchTerm)}/>
             <svg className='nav-searchIcon' width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

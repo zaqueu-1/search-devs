@@ -8,10 +8,12 @@
     padding: 0 4rem;
 }
 
-.navbar-container p {
+.navbar-container a {
     font-size: 2rem;
     font-family: 'Nunito', sans-serif;
     line-height: 43.65px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .nav-input-box {
