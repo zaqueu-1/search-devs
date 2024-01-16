@@ -55,7 +55,6 @@ function User() {
             <button className='contact-btn' onClick={() => handleContact()}>Contato</button>
           : null}
         </div>
-
         <UserRepos repos={user.reposData}/>
       </div>
     </>

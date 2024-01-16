@@ -1,12 +1,16 @@
 import '../../routes/User.css'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { DarkContext } from '../../contexts/darkMode/DarkContext'
 import { FaRegStar } from "react-icons/fa"
 import { BsDot } from "react-icons/bs"
+import { IoArrowBackCircleOutline } from "react-icons/io5"
+import { IoArrowForwardCircleOutline } from "react-icons/io5"
 
 function UserRepos({repos}) {
 
     const { darkMode } = useContext(DarkContext)
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 4
     const sortedRepos = repos ? [...repos].sort((a, b) => b.stargazers_count - a.stargazers_count) : []
 
     const handleUpdated = (updatedAt) => {
@@ -27,9 +31,15 @@ function UserRepos({repos}) {
 
     const noDescription = 'O usuário não adicionou uma descrição ao repositório.'
 
+    const lastIndex = currentPage * itemsPerPage
+    const firstIndex = lastIndex - itemsPerPage
+    const currentRepos = sortedRepos.slice(firstIndex, lastIndex)
+  
+    const paginate = (page) => setCurrentPage(page)
+
   return (
     <div style={darkMode ? {background:'#2B3549',transition:'all 0.3s ease-in-out'} : {}} className='user-repos'>
-        {sortedRepos?.map((repo) => (
+        {currentRepos?.map((repo) => (
             <div 
               style={darkMode ? {background:'#2B3549',transition:'all 0.3s ease-in-out'} : {}} 
               className={darkMode ? 'repo-container color-dark' : 'repo-container color-light'}
@@ -46,6 +56,16 @@ function UserRepos({repos}) {
                 </div>
             </div>
         ))}
+        {repos.length > 4 ?
+          <div className='pagination'>
+            <button disabled={currentPage === 1} onClick={() => paginate(currentPage-1)}>
+              <IoArrowBackCircleOutline style={{width:'24px',height:'24px'}} className={darkMode ? 'icon-dark' : ''}/>
+            </button>
+            <button disabled={currentPage === Math.ceil(sortedRepos.length/itemsPerPage)} onClick={() => paginate(currentPage+1)}>
+              <IoArrowForwardCircleOutline style={{width:'24px',height:'24px'}} className={darkMode ? 'icon-dark' : ''}/>
+            </button>
+          </div> 
+        : null }
     </div>
   )
 }
