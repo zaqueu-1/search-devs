@@ -30,6 +30,12 @@ function Home() {
     fetchData()
   }
 
+  const handleEnter = (e, search) => {
+    if (e.key === 'Enter') {
+      handleSearch(search)
+    }
+  }
+
   return (
     <>
       <div className={darkMode ? 'home-container container-dark' : 'home-container container-light'}>
@@ -38,7 +44,12 @@ function Home() {
           <span style={{color:'#8C19D2'}}> d_evs</span>
         </h1>
         <div className={darkMode ? 'input-box container-dark' : 'input-box container-light'}>
-          <input type="text" placeholder="Search" onChange={(e) => setSearch(e.target.value)} />
+          <input 
+            type="text" 
+            placeholder="Search" 
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => handleEnter(e, search)} 
+          />
           <CiSearch 
                 style={darkMode ? {color:'#fcfcfc'} : {color:'#0000005C'}} 
                 className='searchIcon' 
