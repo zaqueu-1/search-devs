@@ -12,7 +12,6 @@
 
   && input {
     background-color: #2b3549;
-    border: 1px solid black;
     color: #fcfcfc;
     transition: all 0.3s ease-in-out;
   }
@@ -44,4 +43,9 @@
   && p, a, span {
     transition: all 0.3s ease-in-out;
   }
+}
+
+.icon-dark {
+  color: #fcfcfc;
+  transition: all 0.3s ease-in-out;
 }

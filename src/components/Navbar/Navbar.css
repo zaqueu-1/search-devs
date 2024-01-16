@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: flex-start;
     padding: 0 4rem;
+    position: relative;
 }
 
 .navbar-container a {
@@ -44,9 +45,12 @@
     color: #0000005C;
     
   }
-  
-  .nav-searchIcon {
-    position: relative;
-    top: 0;
-    left: 1rem;
+
+  .nav-dark-mode-toggle {
+    position: absolute;
+    right: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
   }

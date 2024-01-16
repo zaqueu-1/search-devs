@@ -55,6 +55,19 @@
     margin-bottom: 1rem;
 }
 
+.user-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.user-contact-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: .5rem;
+}
+
 .user-contact p, .user-contact a, .user-follow {
     font-family: 'Inter', sans-serif;
     font-weight: 400;

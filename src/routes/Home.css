@@ -47,6 +47,9 @@
   position: relative;
   top: 0;
   left: 1rem;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
 }
 
 .input-box button {
@@ -78,4 +81,16 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.dark-mode-icon-sun {
+  color: #FBBF24;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.dark-mode-icon-moon {
+  color: #283245;
+  font-size: 2rem;
+  margin-right: 1rem;
 }

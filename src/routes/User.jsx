@@ -35,13 +35,25 @@ function User() {
     fetchData()
   }, [username])
 
+  const handleContact = () => {
+    if (user.userData.blog){
+      return window.open(user.userData.blog)
+    }
+
+    if (user.userData.twitter_username){
+      return window.open(`https://twitter.com/${user.userData.twitter_username}`)
+    }
+  }
+
   return (
     <>
       <Navbar />
       <div className={darkMode ? 'user-container container-dark' : 'user-container container-light'}>
         <div style={{display:'flex',flexDirection:'column'}}>
           <UserInfo user={user.userData}/>
-          <button className='contact-btn' onClick={() => window.location.href = user.userData.blog}>Contato</button>
+          {user.userData.twitter_username || user.userData.blog ? 
+            <button className='contact-btn' onClick={() => handleContact()}>Contato</button>
+          : null}
         </div>
 
         <UserRepos repos={user.reposData}/>
