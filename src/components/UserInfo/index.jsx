@@ -1,11 +1,11 @@
 import '../../routes/User.css'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { DarkContext } from '../../contexts/darkMode/DarkContext'
-import { GoPeople } from "react-icons/go"
-import { FaRegHeart } from "react-icons/fa"
-import { HiOutlineBuildingOffice2 } from "react-icons/hi2"
-import { IoLocationOutline } from "react-icons/io5"
+import { BsPeople } from "react-icons/bs"
+import { PiBuildingsLight } from "react-icons/pi"
+import { IoHeartOutline } from "react-icons/io5"
 import { MdOutlineEmail } from "react-icons/md"
+import { CiLocationOn } from "react-icons/ci";
 import { GoLink } from "react-icons/go"
 import { CiTwitter } from "react-icons/ci"
 
@@ -29,13 +29,13 @@ function UserInfo({user}) {
 
         {user.followers && user.following ?
             <div className='user-follow'>
-                <div className={darkMode ? 'color-dark' : 'color-light'} style={{display:'flex',gap:'.5rem'}}>
-                    <GoPeople style={{width:'18px',height:'18px'}} className={darkMode ? 'icon-dark' : ''}/>
+                <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
+                    <BsPeople style={{width:'18px',height:'18px'}} className={darkMode ? 'icon-dark' : ''}/>
                     <p>{user.followers} seguidores</p>
                 </div>
     
-                <div className={darkMode ? 'color-dark' : 'color-light'} style={{display:'flex',gap:'.5rem'}}>
-                    <FaRegHeart style={{width:'18px',height:'18px'}} className={darkMode ? 'icon-dark' : ''}/>
+                <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
+                    <IoHeartOutline style={{width:'18px',height:'18px'}} className={darkMode ? 'icon-dark' : ''}/>
                     <p>{user.following} seguindo</p>
                 </div>
             </div>
@@ -44,14 +44,14 @@ function UserInfo({user}) {
         <div className='user-contact' >
             {user.company ? 
                 <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
-                    <HiOutlineBuildingOffice2 style={{width:'20px',height:'20px'}} className={darkMode ? 'icon-dark' : ''}/>
+                    <PiBuildingsLight style={{width:'20px',height:'20px'}} className={darkMode ? 'icon-dark' : ''}/>
                     <p>{user.company}</p>
                 </div>
             : null}
 
             {user.location ? 
                 <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
-                    <IoLocationOutline style={{width:'22px',height:'22px'}} className={darkMode ? 'icon-dark' : ''}/>
+                    <CiLocationOn style={{width:'22px',height:'22px'}} className={darkMode ? 'icon-dark' : ''}/>
                     <p>{user.location}</p>
                 </div>
             : null}
@@ -73,7 +73,7 @@ function UserInfo({user}) {
             {user.twitter_username ? 
                 <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
                     <CiTwitter style={{width:'22px',height:'22px'}} className={darkMode ? 'icon-dark' : ''}/>
-                    <a href={`https://twitter.com/${user.twitter_username}`}>@{user.twitter_username}</a>
+                    <a href={`https://twitter.com/${user.twitter_username}`}>{user.twitter_username}</a>
                 </div>
             : null}
         </div>
