@@ -16,6 +16,7 @@
 
 .input-box {
   width: 800px;
+  max-width: 800px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,6 +24,7 @@
 
 .input-box input {
   width: 37rem;
+  max-width: 37rem;
   height: 3rem;
   border: 1px solid #E2E8F0;
   border-radius: 6px;
@@ -93,4 +95,56 @@
   color: #283245;
   font-size: 2rem;
   margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home-container h1 {
+    font-size: 3rem;
+  }
+  
+  .input-box {
+    width: 90%;
+    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -2rem;
+  }
+  
+  .input-box input {
+    width: 90%;
+    min-width: 90%;
+  }
+  
+  .input-box button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .searchIcon {
+    position: relative;
+    top: .7rem;
+  }
+  
+  .dark-mode-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .dark-mode-icon-sun {
+    color: #FBBF24;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .dark-mode-icon-moon {
+    color: #283245;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
 }

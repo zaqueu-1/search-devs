@@ -8,7 +8,6 @@ function UserRepos({repos}) {
 
     const { darkMode } = useContext(DarkContext)
     const sortedRepos = repos ? [...repos].sort((a, b) => b.stargazers_count - a.stargazers_count) : []
-    const slicedRepos = sortedRepos?.slice(0, 4)
 
     const handleUpdated = (updatedAt) => {
         const updatedDate = new Date(updatedAt)
@@ -30,7 +29,7 @@ function UserRepos({repos}) {
 
   return (
     <div style={darkMode ? {background:'#2B3549',transition:'all 0.3s ease-in-out'} : {}} className='user-repos'>
-        {slicedRepos?.map((repo) => (
+        {sortedRepos?.map((repo) => (
             <div 
               style={darkMode ? {background:'#2B3549',transition:'all 0.3s ease-in-out'} : {}} 
               className={darkMode ? 'repo-container color-dark' : 'repo-container color-light'}
