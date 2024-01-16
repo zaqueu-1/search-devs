@@ -1,10 +1,13 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import './Navbar.css'
+import { DarkContext } from '../../contexts/darkMode/DarkContext'
 
 function Navbar() {
 
+    const { darkMode, toggleDarkMode } = useContext(DarkContext)
+    const [dark, setDark] = useState(darkMode)
     const [searchTerm, setSearchTerm] = useState('')
     const navigate = useNavigate()
 
@@ -27,7 +30,7 @@ function Navbar() {
     }
 
   return (
-    <div className='navbar-container'>
+    <div className={darkMode ? 'navbar-container container-dark' : 'navbar-container container-light'}>
         <a href='/' className='navbar-logo'>
             <p>
                 <span style={{color:'#0069CA'}}>Search</span>

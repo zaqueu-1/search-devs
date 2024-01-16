@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext} from 'react'
 import { useParams } from "react-router-dom"
 import axios from 'axios'
 import './User.css'
 import Navbar from '../components/Navbar'
 import UserInfo from '../components/UserInfo'
 import UserRepos from '../components/UserRepos'
+import { DarkContext } from '../contexts/darkMode/DarkContext'
 
 
 function User() {
 
+  const { darkMode } = useContext(DarkContext)
   const { username } = useParams()
   const [user, setUser] = useState({
     userData: {},
@@ -36,7 +38,7 @@ function User() {
   return (
     <>
       <Navbar />
-      <div className='user-container'>
+      <div className={darkMode ? 'user-container container-dark' : 'user-container container-light'}>
         <div style={{display:'flex',flexDirection:'column'}}>
           <UserInfo user={user.userData}/>
           <button className='contact-btn' onClick={() => window.location.href = user.userData.blog}>Contato</button>
