@@ -1,0 +1,150 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-container h1 {
+  font-size: 5rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.input-box {
+  width: 800px;
+  max-width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-box input {
+  width: 37rem;
+  max-width: 37rem;
+  height: 3rem;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding-left: 3rem;
+  font-size: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 300;
+  outline: none;
+  position: absolute;
+}
+
+.input-box input::placeholder {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  line-height: 26px;
+  color: #0000005C;
+  
+}
+
+.searchIcon {
+  position: relative;
+  top: 0;
+  left: 1rem;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input-box button {
+  width: 11rem;
+  height: 3rem;
+  background-color: #8C19D2;
+  color:white;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+
+.input-box button:hover {
+  opacity: 0.8;
+  transition: all 0.3s ease-in-out;
+}
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.dark-mode-icon-sun {
+  color: #FBBF24;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.dark-mode-icon-moon {
+  color: #283245;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .home-container h1 {
+    font-size: 3rem;
+  }
+  
+  .input-box {
+    width: 90%;
+    min-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: -2rem;
+  }
+  
+  .input-box input {
+    width: 90%;
+    min-width: 90%;
+  }
+  
+  .input-box button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .searchIcon {
+    position: relative;
+    top: .7rem;
+  }
+  
+  .dark-mode-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .dark-mode-icon-sun {
+    color: #FBBF24;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .dark-mode-icon-moon {
+    color: #283245;
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+}
