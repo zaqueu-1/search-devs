@@ -14,7 +14,7 @@ function ErrorPage() {
 
 
   return (
-    <div className={darkMode ? 'error-container container-dark' : 'error-container container-light'}>
+    <div className={darkMode ? 'error-container container-dark color-dark' : 'error-container container-light color-light'}>
         <p>404</p>
         <p>Usuário não encontrado</p>
         <button className='contact-btn' onClick={() => handleGoBack()}>Voltar</button>
