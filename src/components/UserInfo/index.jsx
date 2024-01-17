@@ -73,7 +73,7 @@ function UserInfo({user}) {
             {user.twitter_username ? 
                 <div className={darkMode ? 'user-contact-inner color-dark' : 'user-contact-inner color-light'}>
                     <CiTwitter style={{width:'22px',height:'22px'}} className={darkMode ? 'icon-dark' : ''}/>
-                    <a href={`https://twitter.com/${user.twitter_username}`}>{user.twitter_username}</a>
+                    <a href={`https://twitter.com/${user.twitter_username}`}>@{user.twitter_username}</a>
                 </div>
             : null}
         </div>
