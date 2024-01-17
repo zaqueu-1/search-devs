@@ -5,7 +5,7 @@
 O projeto aqui encontrado se trata de um desafio técnico em React.js e foi desenvolvido com base em requisitos pré-estabelecidos pela empresa. As mudanças e adições de minha autoria estarão listadas mais adiante, assim como as explicações de cada escolha.
 ## Demo
 
-![demo](https://github.com/zaqueu-1/search-devs/github/main/demo.gif)
+![demo](https://github.com/zaqueu-1/search-devs/blob/main/github/demo.gif)
 
 ## Instalação de dependências
 Certifique-se de ter o Node instalado em sua máquina. Clone o repositório e, no diretório do projeto, execute um dos seguintes comandos pelo terminal, de acordo com o gerenciador de pacotes de sua preferência:
